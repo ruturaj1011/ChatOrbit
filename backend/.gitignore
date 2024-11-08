@@ -1,4 +1,6 @@
 
-/node_modules
+# node modules
+node_modules/
 
+# ignore environmentals files
 .env
