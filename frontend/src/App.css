@@ -1,0 +1,59 @@
+
+/* Landing Page */
+
+.landingPage-cont{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../public/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+/* navbar */
+.landingPage-navbar{
+    padding-inline: 2rem;
+    padding-block: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landingPage-navbar .navList{
+    display: flex;
+    gap: 1.6rem;
+    cursor: pointer;
+}
+
+/* main container */
+.landingPage-mainCont{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3rem;
+    padding-inline: 3rem;
+    height: 80vh;
+    align-items: center;
+}
+
+.landingPage-mainCont > div:nth-child(1){
+    font-size: 1.5rem;
+}
+.landingPage-mainCont > div:nth-child(1) div[role="button"]{
+    background-color: #D97500;
+    width: fit-content;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    margin-top: 1.5rem;
+}
+.landingPage-mainCont > div:nth-child(1) div[role="button"] a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.landingPage-mainCont > div:nth-child(2) img{
+
+    height: 70vh;
+    width: auto;
+}
