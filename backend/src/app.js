@@ -14,7 +14,7 @@ import userRoutes from "./routes/userRoutes.js";
 const app = express();
 
 const server = createServer(app);
-const socketIo = connectToSocket(server);
+const io = connectToSocket(server);
 
 
 app.use(cors());
