@@ -4,7 +4,7 @@
 .landingPage-cont{
     width: 100vw;
     height: 100vh;
-    background-image: url("../public/background.png");
+    background-image: url("/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
