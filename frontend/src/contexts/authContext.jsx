@@ -2,11 +2,13 @@ import axios from "axios";
 import httpStatus from "http-status";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import server from "../environment";
+
 
 export const AuthContext = createContext({});
 
 const client = axios.create({
-    baseURL: `http://localhost:8000/api/v1/users/`
+    baseURL: `${server}/api/v1/users`
 })
 
 
@@ -49,16 +51,42 @@ export const AuthProvider = ({ children }) => {
 
             if (request.status === httpStatus.OK) {
                 localStorage.setItem("token", request.data.token);
-                router("/")
+                router("/home")
             }
         } catch (err) {
             throw err;
         }
     }
 
-    
+    const getHistoryOfUser = async () => {
+        try {
+            let request = await client.get("/get_all_activity", {
+                params: {
+                    token: localStorage.getItem("token")
+                }
+            });
+            return request.data
+        } catch
+         (err) {
+            throw err;
+        }
+    }
+
+    const addToUserHistory = async (meetingCode) => {
+        try {
+            let request = await client.post("/add_to_activity", {
+                token: localStorage.getItem("token"),
+                meeting_code: meetingCode
+            });
+            return request
+        } catch (e) {
+            throw e;
+        }
+    }
+
+
     const data = {
-        userData, setUserData, handleRegister, handleLogin
+        userData, setUserData, addToUserHistory, getHistoryOfUser, handleRegister, handleLogin
     }
 
     return (

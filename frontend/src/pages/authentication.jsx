@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { AuthContext } from '../contexts/authContext';
+import { AuthContext } from '../contexts/AuthContext';
 import { Snackbar } from '@mui/material';
 
 
@@ -49,7 +49,6 @@ export default function Authentication() {
             }
             if (formState === 1) {
                 let result = await handleRegister(name, username, password);
-                
                 console.log(result);
                 setUsername("");
                 setMessage(result);
